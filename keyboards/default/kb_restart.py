@@ -1,9 +1,9 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
 
-kb_signup = ReplyKeyboardMarkup(
+kb_restart = ReplyKeyboardMarkup(
     keyboard=[
         [
-            KeyboardButton(text='Запись на консультацию'),
+            KeyboardButton(text='Перезапустить'),
         ],
     ],
     resize_keyboard=True,

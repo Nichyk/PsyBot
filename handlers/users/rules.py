@@ -2,14 +2,15 @@ from aiogram import types
 from aiogram.dispatcher.filters import Command
 from aiogram.types import CallbackQuery
 
-from keyboards import kb_confirm_rules
+from keyboards import kb_confirm_rules, kb_menu
 from loader import dp
 from states import UserStates
 
 
 @dp.message_handler(Command('rules'), state=UserStates.active)
+@dp.message_handler(text='Правила', state=UserStates.active)
 async def rules(message: types.Message):
-    await message.answer('Правила для ознакомления.')
+    await message.answer('Правила для ознакомления.', reply_markup=kb_menu)
     path = 'files/rules.pdf'
     try:
         with open(path, 'rb') as file:

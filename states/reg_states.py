@@ -5,3 +5,4 @@ class Register(StatesGroup):
     name = State()
     phone = State()
     email = State()
+    sign_up_data = State()
